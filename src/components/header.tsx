@@ -7,6 +7,7 @@ import React from "react"
 import { ModeToggle } from "./mode-toggle"
 import NavigationMenus from "./navigation-menu"
 import { useTheme } from "next-themes"
+import { Separator } from "./ui/separator"
 
 const menuItems = [
 	{ name: "Features", href: "#link" },
@@ -32,27 +33,15 @@ export const HeroHeader = () => {
 			>
 				<div className="mx-auto max-w-6xl px-6 transition-all duration-300">
 					<div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-3">
-						<div className="flex w-full items-center justify-between gap-12 lg:w-auto">
+						<div className="flex w-full items-center gap-2 lg:gap-12">
 							<Link
 								href="/"
 								aria-label="home"
-								className="flex items-center space-x-2"
+								className="items-center space-x-2 hidden lg:flex"
 							>
 								<Logo />
 							</Link>
 							<div className="flex items-center gap-4 lg:hidden">
-								{/* <ModeToggle /> */}
-								<Button
-									variant="ghost"
-									size="icon"
-									onClick={toggleTheme}
-								>
-									<Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-									<Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-									<span className="sr-only">
-										Toggle theme
-									</span>
-								</Button>
 								<Button
 									onClick={() => setMenuState(!menuState)}
 									aria-label={
@@ -71,19 +60,44 @@ export const HeroHeader = () => {
 
 							<div className="hidden lg:block">
 								<ul className="flex gap-8 text-sm">
-									{/* {menuItems.map((item, index) => (
-										<li key={index}>
-											<Link
-												href={item.href}
-												className="text-muted-foreground hover:text-accent-foreground block duration-150"
-											>
-												<span>{item.name}</span>
-											</Link>
-										</li>
-                                    ))} */}
 									<NavigationMenus />
 								</ul>
 							</div>
+							<div className="ml-auto flex items-center gap-4 md:flex-1 md:justify-end">
+								<div className="flex h-9 items-center space-x-4 text-sm">
+									{/* <div>Blog</div> */}
+									{/* <Separator orientation="vertical" /> */}
+									<div>Docs</div>
+									<Separator orientation="vertical" />
+									<Button
+										variant="ghost"
+										size="icon"
+										onClick={toggleTheme}
+									>
+										<Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+										<Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+										<span className="sr-only">
+											Toggle theme
+										</span>
+									</Button>
+								</div>
+							</div>
+							{/* <div className="flex items-center gap-4 lg:hidden">
+								<Button
+									onClick={() => setMenuState(!menuState)}
+									aria-label={
+										menuState == true
+											? "Close Menu"
+											: "Open Menu"
+									}
+									variant="ghost"
+									size={"icon"}
+									className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
+								>
+									<Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto  duration-200" />
+									<X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto  -rotate-180 scale-0 opacity-0 duration-200" />
+								</Button>
+							</div> */}
 						</div>
 
 						{/* Display Mobile */}
@@ -103,18 +117,18 @@ export const HeroHeader = () => {
 									{/* <NavigationMenus /> */}
 								</ul>
 							</div>
-							<div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
+							{/* <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
 								<Button asChild variant="outline" size="sm">
 									<Link href="#">
-										<span>Login</span>
+										<span>Login1</span>
 									</Link>
 								</Button>
 								<Button asChild size="sm">
 									<Link href="#">
-										<span>Sign Up</span>
+										<span>Sign Up1</span>
 									</Link>
 								</Button>
-							</div>
+							</div> */}
 						</div>
 					</div>
 				</div>
