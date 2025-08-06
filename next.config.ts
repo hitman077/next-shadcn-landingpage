@@ -6,6 +6,22 @@ const nextConfig: NextConfig = {
 		remotePatterns: [
 			{
 				hostname: "ik.imagekit.io",
+				// hostname: "i.imgur.com",
+				protocol: "https",
+			},
+			{
+				// hostname: "ik.imagekit.io",
+				hostname: "i.imgur.com",
+				protocol: "https",
+			},
+			{
+				// hostname: "ik.imagekit.io",
+				hostname: "source.boomplaymusic.com",
+				protocol: "https",
+			},
+			{
+				// hostname: "ik.imagekit.io",
+				hostname: "deadline.com",
 				protocol: "https",
 			},
 		],

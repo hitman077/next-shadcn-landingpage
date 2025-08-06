@@ -65,10 +65,6 @@ export const HeroHeader = () => {
 							</div>
 							<div className="ml-auto flex items-center gap-4 md:flex-1 md:justify-end">
 								<div className="flex h-9 items-center space-x-4 text-sm">
-									{/* <div>Blog</div> */}
-									{/* <Separator orientation="vertical" /> */}
-									<div>Docs</div>
-									<Separator orientation="vertical" />
 									<Button
 										variant="ghost"
 										size="icon"
@@ -80,23 +76,11 @@ export const HeroHeader = () => {
 											Toggle theme
 										</span>
 									</Button>
+									<Separator orientation="vertical" />
+									<Button variant="default" size="sm">
+										เข้าสู่ระบบ
+									</Button>
 								</div>
-							</div>
-							<div className="flex items-center gap-4 lg:hidden">
-								<Button
-									onClick={() => setMenuState(!menuState)}
-									aria-label={
-										menuState == true
-											? "Close Menu"
-											: "Open Menu"
-									}
-									variant="ghost"
-									size={"icon"}
-									className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
-								>
-									<Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto  duration-200" />
-									<X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto  -rotate-180 scale-0 opacity-0 duration-200" />
-								</Button>
 							</div>
 						</div>
 
@@ -114,7 +98,6 @@ export const HeroHeader = () => {
 											</Link>
 										</li>
 									))}
-									{/* <NavigationMenus /> */}
 								</ul>
 							</div>
 						</div>

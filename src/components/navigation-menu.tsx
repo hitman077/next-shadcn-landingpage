@@ -123,7 +123,7 @@ const NavigationMenus = () => {
 						asChild
 						className={navigationMenuTriggerStyle()}
 					>
-						<Link href="/blogs">Blogs</Link>
+						<Link href="/blogs">บทความ</Link>
 					</NavigationMenuLink>
 				</NavigationMenuItem>
 				<NavigationMenuItem>
@@ -131,7 +131,7 @@ const NavigationMenus = () => {
 						asChild
 						className={navigationMenuTriggerStyle()}
 					>
-						<Link href="/course">Course</Link>
+						<Link href="/course">คอร์สเรียน</Link>
 					</NavigationMenuLink>
 				</NavigationMenuItem>
 				<NavigationMenuItem>
