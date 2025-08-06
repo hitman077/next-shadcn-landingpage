@@ -82,7 +82,7 @@ export const HeroHeader = () => {
 									</Button>
 								</div>
 							</div>
-							{/* <div className="flex items-center gap-4 lg:hidden">
+							<div className="flex items-center gap-4 lg:hidden">
 								<Button
 									onClick={() => setMenuState(!menuState)}
 									aria-label={
@@ -97,7 +97,7 @@ export const HeroHeader = () => {
 									<Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto  duration-200" />
 									<X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto  -rotate-180 scale-0 opacity-0 duration-200" />
 								</Button>
-							</div> */}
+							</div>
 						</div>
 
 						{/* Display Mobile */}
