@@ -24,6 +24,16 @@ const nextConfig: NextConfig = {
 				hostname: "deadline.com",
 				protocol: "https",
 			},
+			{
+				// hostname: "ik.imagekit.io",
+				hostname: "placehold.co",
+				protocol: "https",
+			},
+			{
+				// hostname: "ik.imagekit.io",
+				hostname: "cdn.shopify.com",
+				protocol: "https",
+			},
 		],
 	},
 }

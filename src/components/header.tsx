@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link"
-import { Logo } from "@/components/logo"
+import { Logo, LogoIcon, LogoStroke } from "@/components/logo"
 import { Menu, Moon, MoonStar, Sun, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import React from "react"
@@ -39,7 +39,16 @@ export const HeroHeader = () => {
 								aria-label="home"
 								className="items-center space-x-2 hidden lg:flex"
 							>
-								<Logo />
+								{/* <Logo /> */}
+								{/* <LogoIcon /> */}
+								<div className="space-y-1">
+									<h1 className="text-lg leading-none font-medium">
+										E-Profile
+									</h1>
+									<p className="text-muted-foreground text-sm">
+										เว็บไซต์สำหรับเช็คสายลับที่แฝงตัวอยู่ทั่วโลก
+									</p>
+								</div>
 							</Link>
 							<div className="flex items-center gap-4 lg:hidden">
 								<Button

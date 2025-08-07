@@ -22,7 +22,10 @@ export default function BlogCard({ blog }: BlogCardProps) {
 		? blog.images[0]
 		: `https://i.imgur.com/${blog.images[0]}`
 	return (
-		<Card key={blog.id} className="pt-0 flex flex-col justify-between gap-2">
+		<Card
+			key={blog.id}
+			className="pt-0 flex flex-col justify-between gap-2"
+		>
 			<CardHeader className="p-0 relative">
 				<Image
 					src={imageUrl}
@@ -30,6 +33,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
 					width={300}
 					height={300}
 					className="w-full h-full object-cover rounded-t-lg"
+					unoptimized
 				/>
 				<Badge className="absolute top-2 left-2">
 					{blog.category.name}
