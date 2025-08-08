@@ -1,17 +1,25 @@
 "use client"
 
-import { parseAsInteger, useQueryState } from "nuqs"
+import { useQueryState } from "nuqs"
 
 import { Input } from "../ui/input"
 
-type Props = {}
+interface BlogsFilterProps {
+	refetchBlogs: () => Promise<void>
+}
 
-export default function BlogFillter({}: Props) {
+export default function BlogsFillter({ refetchBlogs }: BlogsFilterProps) {
 	const [search, setSearch] = useQueryState("search", { defaultValue: "" })
-	const [perPage, setPerpage] = useQueryState(
-		"perPage",
-		parseAsInteger.withDefault(10)
-	)
+	// const [perPage, setPerpage] = useQueryState(
+	// 	"perPage",
+	// 	parseAsInteger.withDefault(10)
+	// )
+	const handleSearch = (value: string) => {
+		setSearch(value)
+		setTimeout(() => {
+			refetchBlogs()
+		}, 300)
+	}
 	return (
 		// <div className="flex justify-between gap-3">
 		<div>
@@ -19,10 +27,11 @@ export default function BlogFillter({}: Props) {
 				className="w-full"
 				placeholder="ค้นหาบทความ..."
 				value={search}
-				onChange={(e) => setSearch(e.target.value)}
+				onChange={(e) => handleSearch(e.target.value)}
 			/>
+			{/* <p>Hello, {search || "anonymous visitor"}!</p> */}
 		</div>
-		
+
 		// </div>
 	)
 }
