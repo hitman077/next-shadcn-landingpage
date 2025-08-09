@@ -25,8 +25,20 @@ const BlogsPagination = ({ refetchBlogs }: BlogsFilterProps) => {
 		parseAsInteger.withDefault(1)
 	)
 
+	const [perPage, setPerPage] = useQueryState(
+		"perPage",
+		parseAsInteger.withDefault(10)
+	)
+
 	const handleOffsetChange = (value: number) => {
 		setOffset(value)
+		setTimeout(() => {
+			refetchBlogs()
+		}, 300)
+	}
+
+	const handlePerPageChange = (value: string) => {
+		setPerPage(Number(value))
 		setTimeout(() => {
 			refetchBlogs()
 		}, 300)
@@ -46,13 +58,18 @@ const BlogsPagination = ({ refetchBlogs }: BlogsFilterProps) => {
 						>
 							แสดงผลต่อหน้า
 						</Label>
-						<Select>
+						<Select
+							value={perPage.toString()}
+							onValueChange={(value) =>
+								handlePerPageChange(value)
+							}
+						>
 							<SelectTrigger
 								size="sm"
 								className="w-20"
 								id="rows-per-page"
 							>
-								<SelectValue placeholder={10} />
+								<SelectValue placeholder={perPage.toString()} />
 							</SelectTrigger>
 							<SelectContent side="top">
 								{[10, 20, 30, 40, 50].map((pageSize) => (
@@ -67,7 +84,7 @@ const BlogsPagination = ({ refetchBlogs }: BlogsFilterProps) => {
 						</Select>
 					</div>
 					<div className="flex w-fit items-center justify-center text-sm font-medium">
-						หน้า {offset} ทั้งหมด 
+						หน้า {offset} ทั้งหมด
 					</div>
 					<div className="ml-auto flex items-center gap-2 lg:ml-0">
 						<Button
