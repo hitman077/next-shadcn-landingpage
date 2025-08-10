@@ -71,12 +71,11 @@ export const HeroHeader = () => {
 							<div className="hidden lg:block">
 								<ul className="flex gap-8 text-sm">
 									{/* <NavigationMenus /> */}
-									{/* <NavigationMenus2 /> */}
+									<NavigationMenus2 />
 								</ul>
 							</div>
 							<div className="ml-auto flex items-center gap-4 md:flex-1 md:justify-end">
 								<div className="flex h-9 items-center space-x-4 text-sm">
-									<NavigationMenus2 />
 									<Button
 										variant="outline"
 										size="sm"

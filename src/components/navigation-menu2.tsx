@@ -59,7 +59,7 @@ const NavigationMenus2 = () => {
 						asChild
 						className={navigationMenuTriggerStyle()}
 					>
-						<Link href="/jobsearch">หางาน</Link>
+						<Link href="/jobs">หางาน</Link>
 					</NavigationMenuLink>
 				</NavigationMenuItem>
 				<NavigationMenuItem>
