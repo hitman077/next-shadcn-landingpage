@@ -17,15 +17,21 @@ import {
 import { parseAsInteger, useQueryState } from "nuqs"
 
 interface BlogsPaginationProps {
-	count: number
+	totalblogs: number
+	pageCount?: number
 	refetchBlogs: () => Promise<void>
 }
 
-const BlogsPagination = ({ count, refetchBlogs }: BlogsPaginationProps) => {
+const BlogsPaginationDemo = ({
+	totalblogs,
+	pageCount,
+	refetchBlogs,
+}: BlogsPaginationProps) => {
 	const [offset, setOffset] = useQueryState(
 		"offset",
 		parseAsInteger.withDefault(1)
 	)
+	// const currentPage = offset
 
 	const [perPage, setPerPage] = useQueryState(
 		"perPage",
@@ -50,7 +56,7 @@ const BlogsPagination = ({ count, refetchBlogs }: BlogsPaginationProps) => {
 		<div className="relative flex flex-col py-4 gap-4 overflow-auto">
 			<div className="flex items-center justify-between">
 				<div className="text-muted-foreground hidden flex-1 text-sm lg:flex">
-					บทความทั้งหมด ({count})
+					บทความทั้งหมด ({totalblogs})
 				</div>
 				<div className="flex w-full items-center gap-8 lg:w-fit">
 					<div className="hidden items-center gap-2 lg:flex">
@@ -71,7 +77,7 @@ const BlogsPagination = ({ count, refetchBlogs }: BlogsPaginationProps) => {
 								className="w-20"
 								id="rows-per-page"
 							>
-								<SelectValue placeholder={perPage.toString()} />
+								<SelectValue placeholder={10} />
 							</SelectTrigger>
 							<SelectContent side="top">
 								{[10, 20, 30, 40, 50].map((pageSize) => (
@@ -86,7 +92,7 @@ const BlogsPagination = ({ count, refetchBlogs }: BlogsPaginationProps) => {
 						</Select>
 					</div>
 					<div className="flex w-fit items-center justify-center text-sm font-medium">
-						หน้า {offset} ทั้งหมด
+						หน้า {offset} ทั้งหมด {pageCount}
 					</div>
 					<div className="ml-auto flex items-center gap-2 lg:ml-0">
 						<Button
@@ -137,4 +143,4 @@ const BlogsPagination = ({ count, refetchBlogs }: BlogsPaginationProps) => {
 	)
 }
 
-export default BlogsPagination
+export default BlogsPaginationDemo

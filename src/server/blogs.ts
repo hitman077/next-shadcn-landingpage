@@ -9,10 +9,10 @@ interface GetBlogsParams {
 import { Blog } from "@/components/shared/types"
 import { unstable_cache } from "next/cache"
 
-// export async function getBlogs({ search }: GetBlogsParams): Promise<Blog[]> {
-//     console.log("search", search)
+// export async function getBlogs(params: GetBlogsParams): Promise<Blog[]> {
+// 	// console.log("search", search)
 // 	const res = await fetch(
-// 		`https://api.escuelajs.co/api/v1/products`
+// 		`https://api.escuelajs.co/api/v1/products/?title=${params.search}&offset=${params.offset}&limit=${params.perPage}`
 // 	)
 // 	const data = await res.json()
 
@@ -27,6 +27,7 @@ export const getBlogs = unstable_cache(
 		
 		const res = await fetch(
 			`https://api.escuelajs.co/api/v1/products/?title=${params.search}&offset=${params.offset}&limit=${params.perPage}`
+			// `https://api.escuelajs.co/api/v1/products/?title=${params.search}&offset=${params.offset}`
 		)
 		const data = await res.json()
 		// await new Promise((resolve) => setTimeout(resolve, 3000))

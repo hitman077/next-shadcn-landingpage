@@ -1,6 +1,8 @@
 import BlogsFillter from "@/components/blogs/blogs-fillter"
 import BlogsList from "@/components/blogs/blogs-list"
 import BlogsPagination from "@/components/blogs/blogs-pagination"
+import BlogsPagination2 from "@/components/blogs/blogs-pagination2"
+import { getBlogs } from "@/server/blogs"
 import { revalidateTag } from "next/cache"
 
 const BlogPage = async ({
@@ -12,6 +14,7 @@ const BlogPage = async ({
 	perPage: number
 	offset: number
 }) => {
+	// const blogs = await getBlogs({ search })
 	async function refetchBlogs() {
 		"use server"
 		revalidateTag("blogs")
@@ -38,9 +41,16 @@ const BlogPage = async ({
 					<BlogsFillter refetchBlogs={refetchBlogs} />
 				</div>
 			</div>
-			<BlogsList search={search} perPage={perPage} offset={offset} />
+			{/* <BlogsList search={search} perPage={perPage} offset={offset} /> */}
+			<BlogsList
+				search={search}
+				perPage={perPage}
+				offset={offset}
+				refetchBlogs={refetchBlogs}
+			/>
 
-			<BlogsPagination refetchBlogs={refetchBlogs} />
+			{/* <BlogsPagination refetchBlogs={refetchBlogs} /> */}
+			{/* <BlogsPagination2 refetchBlogs={refetchBlogs} /> */}
 		</section>
 	)
 }

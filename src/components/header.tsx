@@ -8,6 +8,7 @@ import { ModeToggle } from "./mode-toggle"
 import NavigationMenus from "./navigation-menu"
 import { useTheme } from "next-themes"
 import { Separator } from "./ui/separator"
+import NavigationMenus2 from "./navigation-menu2"
 
 const menuItems = [
 	{ name: "Features", href: "#link" },
@@ -42,12 +43,12 @@ export const HeroHeader = () => {
 								{/* <Logo /> */}
 								{/* <LogoIcon /> */}
 								<div className="space-y-1">
-									<h1 className="text-lg leading-none font-medium">
-										E-Profile
+									<h1 className="text-lg leading-none font-medium uppercase">
+										jobjob
 									</h1>
-									<p className="text-muted-foreground text-sm">
+									{/* <p className="text-muted-foreground text-sm">
 										เว็บไซต์สำหรับเช็คสายลับที่แฝงตัวอยู่ทั่วโลก
-									</p>
+									</p> */}
 								</div>
 							</Link>
 							<div className="flex items-center gap-4 lg:hidden">
@@ -69,11 +70,24 @@ export const HeroHeader = () => {
 
 							<div className="hidden lg:block">
 								<ul className="flex gap-8 text-sm">
-									<NavigationMenus />
+									{/* <NavigationMenus /> */}
+									{/* <NavigationMenus2 /> */}
 								</ul>
 							</div>
 							<div className="ml-auto flex items-center gap-4 md:flex-1 md:justify-end">
 								<div className="flex h-9 items-center space-x-4 text-sm">
+									<NavigationMenus2 />
+									<Button
+										variant="outline"
+										size="sm"
+										className="border-rose-500 dark:border-rose-500"
+									>
+										สมัครสมาชิก
+									</Button>
+									<Button variant="default" size="sm">
+										เข้าสู่ระบบ
+									</Button>
+									<Separator orientation="vertical" />
 									<Button
 										variant="ghost"
 										size="icon"
@@ -84,10 +98,6 @@ export const HeroHeader = () => {
 										<span className="sr-only">
 											Toggle theme
 										</span>
-									</Button>
-									<Separator orientation="vertical" />
-									<Button variant="default" size="sm">
-										เข้าสู่ระบบ
 									</Button>
 								</div>
 							</div>

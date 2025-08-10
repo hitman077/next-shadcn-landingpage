@@ -119,22 +119,6 @@ const NavigationMenus = () => {
 					</NavigationMenuLink>
 				</NavigationMenuItem>
 				<NavigationMenuItem>
-					<NavigationMenuLink
-						asChild
-						className={navigationMenuTriggerStyle()}
-					>
-						<Link href="/blogs">บทความ</Link>
-					</NavigationMenuLink>
-				</NavigationMenuItem>
-				<NavigationMenuItem>
-					<NavigationMenuLink
-						asChild
-						className={navigationMenuTriggerStyle()}
-					>
-						<Link href="/course">คอร์สเรียน</Link>
-					</NavigationMenuLink>
-				</NavigationMenuItem>
-				<NavigationMenuItem>
 					<NavigationMenuTrigger>List</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<ul className="grid w-[300px] gap-4">
@@ -171,6 +155,30 @@ const NavigationMenus = () => {
 							</li>
 						</ul>
 					</NavigationMenuContent>
+				</NavigationMenuItem>
+				<NavigationMenuItem>
+					<NavigationMenuLink
+						asChild
+						className={navigationMenuTriggerStyle()}
+					>
+						<Link href="/jobsearch">หางาน</Link>
+					</NavigationMenuLink>
+				</NavigationMenuItem>
+				<NavigationMenuItem>
+					<NavigationMenuLink
+						asChild
+						className={navigationMenuTriggerStyle()}
+					>
+						<Link href="/blogs">บทความ</Link>
+					</NavigationMenuLink>
+				</NavigationMenuItem>
+				<NavigationMenuItem>
+					<NavigationMenuLink
+						asChild
+						className={navigationMenuTriggerStyle()}
+					>
+						<Link href="/course">คอร์สเรียน</Link>
+					</NavigationMenuLink>
 				</NavigationMenuItem>
 			</NavigationMenuList>
 		</NavigationMenu>

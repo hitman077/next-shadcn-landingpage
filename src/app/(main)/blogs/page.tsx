@@ -10,7 +10,7 @@ type BlogPageProps = {
 const Blog = async ({ searchParams }: BlogPageProps) => {
   const { search, perPage, offset } = await loadSearchParams(searchParams)
   // console.log("searchParams", search)
-	return <BlogPage search={search} perPage={perPage} offset={offset} />
+  return <BlogPage search={search} perPage={perPage} offset={offset} />
 }
 
 export default Blog

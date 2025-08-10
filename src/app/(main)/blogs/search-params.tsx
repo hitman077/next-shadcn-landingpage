@@ -4,7 +4,7 @@ import { createLoader, parseAsInteger, parseAsString } from "nuqs/server"
 export const coordinatesSearchParams = {
 	search: parseAsString.withDefault(""),
 	perPage: parseAsInteger.withDefault(10),
-	offset: parseAsInteger.withDefault(1),
+	offset: parseAsInteger.withDefault(0),
 }
 
 export const loadSearchParams = createLoader(coordinatesSearchParams)
