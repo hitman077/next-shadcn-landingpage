@@ -1,3 +1,5 @@
+
+import JobsPage from '../Jobs'
 import Combobox from "@/components/combobox"
 import { Button } from "@/components/ui/button"
 import {
@@ -13,21 +15,25 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { SearchIcon } from "lucide-react"
 
-const JobsPage = () => {
+type Props = {}
+
+const Jobs = async({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug } = await params
 	return (
+		// <JobsPage />
 		<section className="max-w-6xl mx-auto px-6">
 			<div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 py-4">
 				<div>
 					<Card className="w-full max-w-sm rounded-md">
 						{/* <CardHeader>
-					<CardTitle>Login to your account</CardTitle>
-					<CardDescription>
-						Enter your email below to login to your account
-					</CardDescription>
-					<CardAction>
-						<Button variant="link">Sign Up</Button>
-					</CardAction>
-				</CardHeader> */}
+              <CardTitle>Login to your account</CardTitle>
+              <CardDescription>
+                Enter your email below to login to your account
+              </CardDescription>
+              <CardAction>
+                <Button variant="link">Sign Up</Button>
+              </CardAction>
+            </CardHeader> */}
 						<CardContent>
 							<form>
 								<div className="flex flex-col gap-6">
@@ -68,7 +74,7 @@ const JobsPage = () => {
 				</div>
 				<div className="col-span-2">
 					<h2 className="text-balance text-2xl font-semibold lg:text-2xl">
-						บทความล่าสุด
+						บทความล่าสุด {slug}
 					</h2>
 				</div>
 			</div>
@@ -76,4 +82,4 @@ const JobsPage = () => {
 	)
 }
 
-export default JobsPage
+export default Jobs

@@ -19,24 +19,48 @@ import {
 
 const frameworks = [
 	{
-		value: "next.js",
-		label: "Next.js",
+		value: "ชัยภูมิ",
+		label: "ชัยภูมิ",
 	},
 	{
-		value: "sveltekit",
-		label: "SvelteKit",
+		value: "นครราชสีมา",
+		label: "นครราชสีมา",
 	},
 	{
-		value: "nuxt.js",
-		label: "Nuxt.js",
+		value: "บุรีรัมย์",
+		label: "บุรีรัมย์",
 	},
 	{
-		value: "remix",
-		label: "Remix",
+		value: "มหาสารคาม",
+		label: "มหาสารคาม",
 	},
 	{
-		value: "astro",
-		label: "Astro",
+		value: "ร้อยเอ็ด",
+		label: "ร้อยเอ็ด",
+	},
+	{
+		value: "เลย",
+		label: "เลย",
+	},
+	{
+		value: "ศรีสะเกษ",
+		label: "ศรีสะเกษ",
+	},
+	{
+		value: "สกลนคร",
+		label: "สกลนคร",
+	},
+	{
+		value: "สุรินทร์",
+		label: "สุรินทร์",
+	},
+	{
+		value: "อุดรธานี",
+		label: "อุดรธานี",
+	},
+	{
+		value: "อุบลราชธานี",
+		label: "อุบลราชธานี",
 	},
 ]
 
